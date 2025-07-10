@@ -32,7 +32,13 @@ public class Topic_03_XPath_CSS {
 
     }
     @Test
-    public void TC_02_(){
+    public void TC_02_Invalid_Email(){
+        driver.get("https://alada.vn/tai-khoan/dang-ky.html");
+        driver.findElement(By.cssSelector("input#txtEmail")).sendKeys("abcd@1346@123");
+        driver.findElement(By.cssSelector("input#txtCEmail")).sendKeys("abcd@1346@123");
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
+        Assert.assertEquals(driver.findElement(By.id("txtEmail-error")).getText(),"Vui lòng nhập email hợp lệ");
+        Assert.assertEquals(driver.findElement(By.id("txtCEmail-error")).getText(),"Email nhập lại không đúng");
 
     }
 
