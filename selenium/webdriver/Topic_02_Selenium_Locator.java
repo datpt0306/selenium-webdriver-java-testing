@@ -116,8 +116,6 @@ public class Topic_02_Selenium_Locator {
 
 
 
-
-
     @AfterClass
     public void cleanBrowser(){
         driver.quit();
